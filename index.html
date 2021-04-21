@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    
+
+    <div id="root">
+        <div class="container">
+            <div class="slide container">
+
+                <div @click="prevPhoto()" class="left arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+    
+                <div>
+                    <img :src="images[img]" alt="">
+                </div>
+    
+                <div @click="nextPhoto()" class="right arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="circle">
+                <div v-for='(image,index) in images' class="dots" :class="{'active': index == img}">
+                    <i class="fas fa-circle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
